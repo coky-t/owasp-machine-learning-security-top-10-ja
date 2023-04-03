@@ -1,0 +1,9 @@
+{
+  "root" : "./Document/2023",
+  "plugins" : [ "anchors" ],
+
+  "structure": {
+    "readme": "Top_10.md"
+  }
+
+}
