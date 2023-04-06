@@ -16,41 +16,41 @@ redirect_from:
 
 ---
 
-RISK Chart for Scenario One:
 
-|                                                                              脅威エージェント/攻撃手法                                                                                |                                                       セキュリティ上の弱点                                                |                                                   影響                                                      |   |   |
-|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------:|---|---|
-|                                             悪用難易度: 5 (Easy to exploit)<br>ML アプリケーション依存: 4 <br>ML オペレーション依存: 3                                                | 検出難易度: 3<br>(The adversarial image may not be noticeable to the naked eye, making it difficult to detect the attack) | 技術的影響: 5<br>(The attack requires technical knowledge of deep learning and image processing techniques) |   |   |
-| 脅威エージェント: Attacker with knowledge of deep learning and image processing techniques<br>攻撃手法: Deliberately crafted adversarial image that is similar to a legitimate image  | Vulnerability in the deep learning model's ability to classify images accurately                                          | Misclassification of the image, leading to security bypass or harm to the system                            |   |   |
-|                                                                                                                                                                                       |                                                                                                                           |                                                                                                             |   |   |
 
-It is important to note that this chart is only a sample based on scenario below, and the actual risk assessment will depend on the specific circumstances of each machine learning system.
+| 脅威エージェント/攻撃手法 | セキュリティ上の弱点 | 影響 |
+|:-------------------------:|:--------------------:|:----:|
+| 悪用難易度: 5 (悪用は簡単です)<br>ML アプリケーション依存: 4 <br>ML オペレーション依存: 3 | 検出難易度: 3<br>(敵対的画像は肉眼では識別できず、攻撃の検出は困難になることがあります) | 技術的影響: 5<br>(攻撃にはディープラーニングや画像処理技術の専門知識が必要です) |
+| 脅威エージェント: ディープラーニングや画像処理技術の知識を持つ攻撃者<br>攻撃手法: 正規の画像に類似して意図的に作られた敵対的画像 | 画像を正確に分類するディープラーニングモデルの能力における脆弱性 | 画像の誤分類により、セキュリティのバイパスやシステムへの侵害につながります |
+
+
+本チャートは下記のシナリオに基づくサンプルに過ぎず、実際のリスク評価は各機械学習システムの具体的な状況によって異なることに注意することが重要です。
 
 
 
 **説明**:
-Adversarial attacks are a type of attack in which an attacker deliberately alters input data to mislead the model.
+敵対的攻撃は攻撃者が意図的に入力データを改竄してモデルを欺く攻撃の一種です。
 
 
 **攻撃シナリオの例:**
 
-シナリオ 1: Image classification
+シナリオ 1: 画像分類
 
-A deep learning model is trained to classify images into different categories, such as dogs and cats.
-An attacker creates an adversarial image that is very similar to a legitimate image of a cat, but with small, carefully crafted perturbations that cause the model to misclassify it as a dog.
-When the model is deployed in a real-world setting, the attacker can use the adversarial image to bypass security measures or cause harm to the system.
-
-
+ディープラーニングモデルは画像を犬や猫などのさまざまなカテゴリに分類するように訓練されています。
+攻撃者は正規の猫の画像に非常によく似ていますが、慎重に作成された小さな摂動により、モデルがそれを犬として誤分類するような敵対的画像を作成します。
+モデルが実際の環境にデプロイされると、攻撃者は敵対的画像を使用してセキュリティをバイパスしたりシステムに侵害したりできます。
 
 
 
-シナリオ 2: Network intrusion detection
 
-A deep learning model is trained to detect intrusions in a network. 
-An attacker creates adversarial network traffic by carefully crafting packets in such a way that they will evade the model\'s intrusion detection system.
-The attacker can manipulate the features of the network traffic, such as the source IP address, destination IP address, or payload, in such a way that they are not detected by the intrusion detection system.
-For example, the attacker may hide their source IP address behind a proxy server or encrypt the payload of their network traffic.
-This type of attack can have serious consequences, as it can lead to data theft, system compromise, or other forms of damage.
+
+シナリオ 2: ネットワーク侵入検知
+
+ディープラーニングモデルはネットワークへの侵入を検知するように訓練されています。
+攻撃者はモデルの侵入検知システムを回避するように慎重にパケットを作成することにより、敵対的ネットワークトラフィックを作り出します。
+攻撃者は送信元 IP アドレス、宛先 IP アドレス、ペイロードなどのネットワークトラフィックの特性を侵入検知システムに検知されないように操作できます。
+たとえば、攻撃者が送信元 IP アドレスをプロキシサーバーの背後に隠したり、ネットワークトラフィックのペイロードを暗号化する可能性があります。
+この種の攻撃はデータ窃取、システム侵害、その他の形態の損害につながる可能性があるため、深刻な結果をもたらす可能性があります。
 
 
 
@@ -59,17 +59,17 @@ This type of attack can have serious consequences, as it can lead to data theft,
 
 **防止方法:**
 
-1. Adversarial training: One approach to defending against adversarial attacks is to train the model on adversarial examples. 
-    This can help the model become more robust to attacks and reduce its susceptibility to being misled.
+1. 敵対的トレーニング: 敵対的攻撃から防御するアプローチの一つは敵対的事例でモデルを訓練することです。
+    これによりモデルは攻撃に対してより堅牢になり、欺かれにくくなります。
 
 
 
-2. Robust models: Another approach is to use models that are designed to be robust against adversarial attacks, such as adversarial training or models that incorporate defense mechanisms.
+2. ロバストモデル: もう一つのアプローチは敵対的トレーニングや防御メカニズムを組み込んだモデルなど、敵対的攻撃に対して堅牢になるように設計されたモデルを使用することです。
 
 
 
-3. Input validation: Input validation is another important defense mechanism that can be used to detect and prevent adversarial attacks. 
-    This involves checking the input data for anomalies, such as unexpected values or patterns, and rejecting inputs that are likely to be malicious.
+3. 入力バリデーション: 入力バリデーションは敵対的攻撃の検知と防止に使用できるもう一つの重要な防御メカニズムです。
+    これは予期しない値やパターンなど異常がないか入力データをチェックし、悪意のある可能性が高い入力を拒否するものです。
 
 
 
