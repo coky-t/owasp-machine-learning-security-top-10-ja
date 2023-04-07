@@ -16,39 +16,39 @@ redirect_from:
 
 ---
 
-|                                                                   脅威エージェント/攻撃手法                                                                     |                             セキュリティ上の弱点                          |                                                                 影響                                                                   |
-|:---------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------------------------------:|
-|                                 悪用難易度: 3 (Medium to exploit)<br>ML アプリケーション依存: 4 <br>ML オペレーション依存: 3                                    |                       検出難易度: 2<br>(Limited)                          |                                                            技術的影響: 4<br>                                                           |
-| 脅威エージェント: Attacker who has access to the training data used for the model.<br>攻撃手法: The attacker injects malicious data into the training data set. | Lack of data validation and insufficient monitoring of the training data. | The model will make incorrect predictions based on the poisoned data, leading to false decisions and potentially serious consequences. |
+| 脅威エージェント/攻撃手法 | セキュリティ上の弱点 | 影響 |
+|:-------------------------:|:--------------------:|:----:|
+| 悪用難易度: 3 (悪用は中程度です)<br>ML アプリケーション依存: 4 <br>ML オペレーション依存: 3 | 検出難易度: 2<br>(制限があります) | 技術的影響: 4<br> |
+| 脅威エージェント: モデルに使用する訓練データにアクセスできる攻撃者。<br>攻撃手法: 攻撃者は訓練データセットに悪意のあるデータを注入します。 | データバリデーションの欠如と訓練データの不十分な監視。 | モデルは汚染されたデータに基づいて誤った予測を行い、誤った判断を下して深刻な事態を招く可能性があります。 |
 
 
-It is important to note that this chart is only a sample based on scenario below, and the actual risk assessment will depend on the specific circumstances of each machine learning system.
+本チャートは下記のシナリオに基づくサンプルに過ぎず、実際のリスク評価は各機械学習システムの具体的な状況によって異なることに注意することが重要です。
 
 
 
 **説明:**
 
-Data poisoning attacks occur when an attacker manipulates the training data to cause the model to behave in an undesirable way.
+データポイズニング攻撃は攻撃者が訓練データを操作してモデルが望ましくない動作をするように仕向けることで発生します。
 
 
 **攻撃シナリオの例:**
 
-シナリオ 1: Training a spam classifier
+シナリオ 1: スパム分類器のトレーニング
 
-An attacker poisons the training data for a deep learning model that classifies emails as spam or not spam. The attacker executed this attack by injecting the maliciously labeled spam emails into the training data set. 
-This could be done by compromising the data storage system, for example by hacking into the network or exploiting a vulnerability in the data storage software. 
-The attacker could also manipulate the data labeling process, such as by falsifying the labeling of the emails or by bribing the data labelers to provide incorrect labels.
-
-
-
+攻撃者は電子メールをスパムかスパムでないかに分類するディープラーニングモデルの訓練データを汚染します。
+攻撃者は悪意を持ってラベル付けされたスパムメールを訓練データセットに注入することでこの攻撃を実行しました。
+これはたとえばネットワークをハッキングしたりデータストレージソフトウェアの脆弱性を悪用するなどして、データストレージシステムを侵害することで行うことができます。
+攻撃者は電子メールのラベル付けを改竄したりデータラベル付け担当者に賄賂を渡して誤ったラベルを提供するなど、データのラベル付けプロセスを操作することも可能です。
 
 
 
-シナリオ 2: Training a network traffic classification system
 
-An attacker poisons the training data for a deep learning model that is used to classify network traffic into different categories, such as email, web browsing, and video streaming. 
-They introduce a large number of examples of network traffic that are incorrectly labeled as a different type of traffic, causing the model to be trained to classify this traffic as the incorrect category. 
-As a result, the model may be trained to make incorrect traffic classifications when the model is deployed, potentially leading to misallocation of network resources or degradation of network performance.
+
+シナリオ 2: ネットワークトラフィック分類システムのトレーニング
+
+攻撃者はネットワークトラフィックを電子メール、ウェブブラウザ、動画ストリーミングなどのさまざまなカテゴリに分類するために使用されるディープラーニングモデルの訓練データを汚染します。
+攻撃者は別のタイプのトラフィックであると誤ったラベル付けをされたネットワークトラフィックの事例を大量に導入し、このトラフィックを誤ったカテゴリに分類するようにモデルを訓練させます。
+その結果、このモデルがデプロイされた際に誤ったトラフィック分類を行うように訓練されており、ネットワークリソースの不適切な割り当てやネットワークパフォーマンスの低下につながる可能性があります。
 
 
 
@@ -58,34 +58,34 @@ As a result, the model may be trained to make incorrect traffic classifications 
 
 **防止方法:**
 
-Data validation and verification: Ensure that the training data is thoroughly validated and verified before it is used to train the model.
-This can be done by implementing data validation checks and employing multiple data labelers to validate the accuracy of the data labeling.
+データの妥当性確認と検証: モデルの訓練に使用する前に訓練データの徹底的に妥当性確認し検証することを確保します。
+これはデータバリデーションチェックを実装し、複数のデータラベル付け器を使用してデータラベリングの正確性を確認することで実現できます。
 
 
 
-Secure data storage: Store the training data in a secure manner, such as using encryption, secure data transfer protocols, and firewalls.
+安全なデータの保存: 訓練データは暗号化、安全なデータ転送プロトコル、ファイアウォールなどの安全な方法で保存します。
 
 
-Data separation: Separate the training data from the production data to reduce the risk of compromising the training data.
+データの分離: 訓練データと本番データを分離して訓練データが危殆化するリスクを軽減します。
 
 
-Access control: Implement access controls to limit who can access the training data and when they can access it.
+アクセス制御: アクセス制御を実装して訓練データにアクセスできる人とアクセスできるタイミングを制限します。
 
 
-Monitoring and auditing: Regularly monitor the training data for any anomalies and conduct audits to detect any data tampering.
+監視と監査: 訓練データに異常がないか定期的に監視し、監査を実施してデータの改竄を検知します。
 
 
-Model validation: Validate the model using a separate validation set that has not been used during training. 
-This can help to detect any data poisoning attacks that may have affected the training data.
+モデルバリデーション: 訓練時に使用していない別のバリデーションセットを使用してモデルを確認します。
+これは訓練データに影響を与えた可能性があるデータポイズニング攻撃を検知するのに役立ちます。
 
 
-Model ensembles: Train multiple models using different subsets of the training data and use an ensemble of these models to make predictions.
-This can reduce the impact of data poisoning attacks as the attacker would need to compromise multiple models to achieve their goals.
+モデルアンサンブル: 訓練データの異なるサブセットを使用して複数のモデルを訓練し、これらのモデルのアンサンブルを使用して予測を行います。
+これにより、攻撃者が目的を達成するには複数のモデルを侵害する必要があるため、データポイズニング攻撃の影響を軽減できます。
 
 
 
-Anomaly detection: Use anomaly detection techniques to detect any abnormal behavior in the training data, such as sudden changes in the data distribution or data labeling. 
-These techniques can be used to detect data poisoning attacks early on.
+異常検知: 異常検知技法を使用して、データ分布やデータラベリングの急激な変化などの訓練データの異常な動作を検知します。
+これらの技法を使用して、データポイズニング攻撃を早期に検知できます。
 
 
 
