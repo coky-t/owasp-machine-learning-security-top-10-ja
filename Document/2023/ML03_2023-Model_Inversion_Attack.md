@@ -16,56 +16,56 @@ redirect_from:
 
 ---
 
-|                                                                 脅威エージェント/攻撃手法                                                                |                                セキュリティ上の弱点                            |                                        影響                                         |
-|:--------------------------------------------------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------:|
-|                              悪用難易度: 4 (Medium to exploit)<br>ML アプリケーション依存: 5 <br>ML オペレーション依存: 3                                |                          検出難易度: 2<br>(Limited)                            | 技術的影響: 4<br>Moderate technical knowledge required to carry out the attack)<br> |
-| 脅威エージェント: Attackers who have access to the model and input data<br>攻撃手法: Submitting an image to the model and analyzing the model's response | Model's output can be used to infer sensitive information about the input data | Confidential information about the input data can be compromised                    |
+| 脅威エージェント/攻撃手法 | セキュリティ上の弱点 | 影響 |
+|:-------------------------:|:--------------------:|:----:|
+| 悪用難易度: 4 (悪用は中程度です)<br>ML アプリケーション依存: 5 <br>ML オペレーション依存: 3 | 検出難易度: 2<br>(制限があります) | 技術的影響: 4<br>(攻撃を実行するために必要な中程度の技術的知識)<br> |
+| 脅威エージェント: モデルと入力データにアクセスできる攻撃者<br>攻撃手法: モデルに画像を送り、モデルのレスポンスを解析します | モデルの出力を使用して、入力データに関する機密情報を推論できる | 入力データに関する機密情報が危殆化する可能性があります |
 
 
-It is important to note that this chart is only a sample based on scenario below, and the actual risk assessment will depend on the specific circumstances of each machine learning system.
+本チャートは下記のシナリオに基づくサンプルに過ぎず、実際のリスク評価は各機械学習システムの具体的な状況によって異なることに注意することが重要です。
 
 
 
 **説明:**
 
-Model inversion attacks occur when an attacker reverse-engineers the model to extract information from it.
+モデル反転攻撃は攻撃者がモデルをリバースエンジニアリングして情報を抽出することで発生します。
 
 
 **攻撃シナリオの例:**
 
-シナリオ 1: Stealing personal information from a face recognition model
+シナリオ 1: 顔認識モデルから個人情報を摂取する
 
-An attacker trains a deep learning model to perform face recognition.
-They then use this model to perform a model inversion attack on a different face recognition model that is used by a company or organization. 
-The attacker inputs images of individuals into the model and recovers the personal information of the individuals from the model\'s predictions, such as their name, address, or social security number.
-
-
-
-
-
-The attacker executed this attack by training the model to perform face recognition and then using this model to invert the predictions of another face recognition model. 
-This could be done by exploiting a vulnerability in the model\'s implementation or by accessing the model through an API. 
-The attacker would then be able to recover the personal information of the individuals from the model\'s predictions.
-
-
-
-
-シナリオ 2: Bypassing a bot detection model in online advertising
-
-An advertiser wants to automate their advertising campaigns by using bots to perform actions such as clicking on ads and visiting websites.
-However, online advertising platforms use bot detection models to prevent bots from performing these actions. 
-To bypass these models, the advertiser trains a deep learning model for bot detection and uses it to invert the predictions of the bot detection model used by the online advertising platform. 
-The advertiser inputs their bots into the model and is able to make the bots appear as human users, allowing them to bypass the bot detection and successfully execute their automated advertising campaigns.
+攻撃者は顔認識を行うためのディープラーニングモデルを訓練します。
+次に、このモデルを使用して、会社や組織で使用されている別の顔認識モデルに対してモデル反転攻撃を行います
+攻撃者は個人の画像をモデルに入力して、モデルの予測から名前、住所、社会保障番号などの各人の個人情報を復元します。
 
 
 
 
 
+攻撃者はモデルを訓練して顔認識を実行し、それからこのモデルを使用して別の顔認識モデルの予測を反転させて、この攻撃を実行しました。
+これはモデルの実装の脆弱性を悪用するか、API を介してモデルにアクセスすることで実行できます。
+攻撃者はモデルの予測から各人の個人情報を復元できるようになります。
 
 
-The advertiser executed this attack by training their own bot detection model and then using it to reverse the predictions of the bot detection model used by the online advertising platform. 
-They were able to access this other model through a vulnerability in its implementation or by using an API. 
-The end result of the attack was the advertiser successfully automating their advertising campaigns by making their bots appear as human users.
+
+
+シナリオ 2: オンライン広告でボット検知モデルをバイパスする
+
+広告主は広告をクリックしてウェブサイトに訪れるようなアクションを実行するボットを使用して、広告キャンペーンを自動化したいと考えています。
+しかし、オンライン広告プラットフォームではボット検知モデルを使用して、ボットがこのようなアクションを実行するのを防ぎます。
+これらのモデルをバイパスするするために、広告主はボット検知のディープラーニングモデルを訓練し、それを使用してオンライン広告プラットフォームで使用されるボット検知モデルの予測を反転させます。
+広告主はボットをモデルに入力し、ボットを人間のユーザーのように見せることができたため、ボット検知をバイパスして自動化された広告キャンペーンをうまく実行できます。
+
+
+
+
+
+
+
+広告主は独自のボット検知モデルを訓練し、それを使用してオンライン広告プラットフォームで使用されるボット検知モデルの予測をリバースしてこの攻撃を実行しました。
+実装の脆弱性や API を使用してこの他のモデルにアクセスできました。
+攻撃の最終結果として、広告主はボットを人間のユーザーのように見せることで、広告キャンペーンの自動化に成功しました。
 
 
 
@@ -73,30 +73,30 @@ The end result of the attack was the advertiser successfully automating their ad
 
 **防止方法:**
 
-Access control: Limiting access to the model or its predictions can prevent attackers from obtaining the information needed to invert the model. 
-This can be done by requiring authentication, encryption, or other forms of security when accessing the model or its predictions.
+アクセス制御: モデルやその予測へのアクセスを制限することで、攻撃者がモデルを反転するために必要な情報を獲得することを防止できます。
+これはモデルやその予測にアクセスする際に、認証、暗号化、またはその他の形式のセキュリティを要求することで実行できます。
 
 
 
-Input validation: Validating the inputs to the model can prevent attackers from providing malicious data that can be used to invert the model. 
-This can be done by checking the format, range, and consistency of the inputs before they are processed by the model.
+入力バリデーション: モデルへの入力を確認することで、攻撃者がモデルを反転するために使用できる悪意のあるデータを供給するのを防止できます。
+これはモデルを処理する前に、入力の形式、範囲、一貫性をチェックすることで実行できます。
 
 
 
-Model transparency: Making the model and its predictions transparent can help to detect and prevent model inversion attacks. 
-This can be done by logging all inputs and outputs, providing explanations for the model's predictions, or allowing users to inspect the model's internal representations.
-
-
-
-
-Regular monitoring: Monitoring the model's predictions for anomalies can help to detect and prevent model inversion attacks. 
-This can be done by tracking the distribution of inputs and outputs, comparing the model's predictions to ground truth data, or monitoring the model's performance over time.
+モデルの透過性: モデルとその予測を透過的にすると、モデル反転攻撃の検知と防止に役立ちます。
+これは入力と出力をすべてログ記録し、モデルの予測に対する解釈を提供するか、ユーザーがモデルの内部表現を検査できるようにすることで実行できます。
 
 
 
 
-Model retraining: Regularly retraining the model can help to prevent the information leaked by model inversion attacks from becoming outdated.
-This can be done by incorporating new data and correcting any inaccuracies in the model's predictions.
+定期的な監視: モデルの予測に異常がないか監視すると、モデル反転攻撃の検知と防止に役立ちます。
+これは入力と出力の分布を追跡するか、モデルの予測を正解データと比較するか、モデルのパフォーマンスを経時的に監視することで実行できます。
+
+
+
+
+モデルの再トレーニング: モデルを定期的に再トレーニングすると、モデル反転攻撃によって漏洩した情報が古くなるのを防止できます。
+これは新しいデータを取り入れ、モデルの予測の不正確さを修正することで実行できます。
 
 
 
