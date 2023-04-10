@@ -16,60 +16,60 @@ redirect_from:
 
 ---
 
-|                                                                                                         脅威エージェント/攻撃手法                                                                                                            |                                                                                     セキュリティ上の弱点                                                                                  |                                                                                  影響                                                                                   |
-|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-|                                                     悪用難易度: 4 (Effort required to exploit this weakness is moderate)<br>ML アプリケーション依存: 5 <br>ML オペレーション依存: 3                                                          |                                                         検出難易度: 3 <br>(Detection of this attack is moderately challenging)                                                            |                                                        技術的影響: 4 <br>(Moderate technical skill required)<br>                                                        |
-| Hackers or malicious actors who have access to the data and the model<br>Insiders who have malicious intent or are bribed to interfere with the data<br> <br>Unsecured data transmission channels that allow unauthorized access to the data | Lack of proper data access controls<br>Lack of proper data validation and sanitization techniques<br>Lack of proper data encryption<br>Lack of proper data backup and recovery techniques | Unreliable or incorrect model predictions<br>Loss of confidentiality and privacy of sensitive data<br>Legal and regulatory compliance violations<br>Reputational damage |
+| 脅威エージェント/攻撃手法 | セキュリティ上の弱点 | 影響 |
+|:-------------------------:|:--------------------:|:----:|
+| 悪用難易度: 4 (この弱点を悪用するために必要な労力は中程度です)<br>ML アプリケーション依存: 5 <br>ML オペレーション依存: 3 | 検出難易度: 3 <br>(この攻撃の検出はやや困難です) | 技術的影響: 4 <br>(中程度の技術スキルが必要です)<br> |
+| データおよびモデルにアクセスできるハッカーや悪意のあるアクター<br>悪意があるか、賄賂を受け取ってデータに干渉する内部関係者<br> <br>データへの認可されていないアクセスを可能にする安全でないデータ伝送チャネル | 適切なデータアクセスコントロールの欠如<br>適切なデータバリデーションとサニタイズ技術の欠如<br>適切なデータ暗号化の欠如<br>適切なデータバックアップとリカバリ技術の欠如 | 信頼できないか、不正確なモデル予測<br>機密データの機密性とプライバシーの損失<br>法律および規制の遵守違反<br>風評被害 |
 
-It is important to note that this chart is only a sample based on scenario below, and the actual risk assessment will depend on the specific circumstances of each machine learning system.
+本チャートは下記のシナリオに基づくサンプルに過ぎず、実際のリスク評価は各機械学習システムの具体的な状況によって異なることに注意することが重要です。
 
 
 
 **説明:**
 
-Membership interference attacks occur when an attacker manipulates the model's training data in order to cause it to behave in a way that exposes sensitive information.
+メンバーシップ推論攻撃は攻撃者がモデルの訓練データを操作して、機密情報を開示するような動作をさせることで発生します。
 
 
 
 **攻撃シナリオの例:**
 
-シナリオ 1: Inferencing financial data from a machine learning model
+シナリオ 1: 機械学習モデルから金融データを推論する
 
-A malicious attacker wants to gain access to sensitive financial information of individuals. 
-They do this by training a machine learning model on a dataset of financial records and using it to query whether or not a particular individual's record was included in the training data.
-The attacker can then use this information to infer the financial history and sensitive information of individuals.
-
-
+悪意のある攻撃者は個々人の機密性の高い金融情報にアクセスすることを望んでいます。
+これは金融記録のデータセットの機械学習モデルを訓練し、それを使用して特定の個人の記録が訓練データに含まれているかどうかを照会することで行われます。
+攻撃者はこの情報を使用して、個々人の金融履歴と機密情報を推測できます。
 
 
-The attacker executed this attack by training a machine learning model on a dataset of financial records obtained from a financial organization. 
-They then used this model to query whether or not a particular individual\'s record was included in the training data, allowing them to infer sensitive financial information.
+
+
+攻撃者は金融機関から入手した金融記録のデータセットで機械学習モデルを訓練してこの攻撃を実行しました。
+このモデルを使用して特定の個人の記録が訓練データに含まれているかどうかを照会し、機密性の高い金融情報を推測できます。
 
 
 
 
 **防止方法:**
 
-Model training on randomized or shuffled data: Training machine learning models on randomized or shuffled data can make it more difficult for an attacker to determine whether a particular example was included in the training dataset.
+ランダム化またはシャッフルされたデータでのモデルトレーニング: ランダム化またはシャッフルされたデータで機械学習モデルをトレーニングすることで、攻撃者は特定の事例が訓練データセットに含まれているかどうかを判断することがより困難になる可能性があります。
 
 
 
 
-Model Obfuscation: Obfuscating the model's predictions by adding random noise or using differential privacy techniques can help prevent membership inference attacks by making it harder for an attacker to determine the model's training data.
+モデルの難読化: ランダムノイズを追加したり差分プライバシー技法を使用してモデルの予測を難読化することで、攻撃者はモデルの訓練データを特定することがより困難になり、メンバーシップ推論攻撃を防止できます。
 
 
 
 
-Regularization: Regularization techniques such as L1 or L2 regularization can help prevent overfitting of the model to the training data, which can reduce the model's ability to accurately determine whether a particular example was included in the training dataset.
+正則化: L1 正則化や L2 正則化などの正則化技法はモデルが訓練データに過剰適合することを防ぐのに役立ち、特定の事例が訓練データセットに含まれているかどうかを正確に判断するモデルの能力を低減できます。
 
 
 
 
-Reducing the training data: Reducing the size of the training dataset or removing redundant or highly correlated features can help reduce the information an attacker can gain from a membership inference attack.
+訓練データの削減: 訓練データセットのサイズを縮小したり冗長な特徴や相関性の高い特徴を削除することで、攻撃者がメンバーシップ推論攻撃から得られる情報を低減できます。
 
 
 
-Testing and monitoring: Regularly testing and monitoring the model's behavior for anomalies can help detect and prevent membership inference attacks by detecting when an attacker is attempting to gain access to sensitive information.
+テストと監視: モデルの動作に異常がないか定期的にテストと監視を行うことで、攻撃者が機密情報にアクセスを試みていることを検知し、メンバーシップ推論攻撃を検知および防止できます。
 
 
 
