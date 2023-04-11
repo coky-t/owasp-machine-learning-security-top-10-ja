@@ -16,32 +16,32 @@ redirect_from:
 
 ---
 
-|                                                                脅威エージェント/攻撃手法                                                                     |                                                         セキュリティ上の弱点                                                      |                                                                                                影響                                                                                                  |
-|:------------------------------------------------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-|             悪用難易度: 4 (Effort required to exploit this weakness is moderate)<br>ML アプリケーション依存: 4<br>ML オペレーション依存: 3                   |                             検出難易度: 3 <br>(Detection of this attack is moderately challenging)                                |                                                                       技術的影響: 4 <br>(Moderate technical skill required)<br>                                                                      |
-| エージェント/攻撃手法: This refers to the entity that carries out the attack, in this case, it is an attacker who wants to steal the machine learning model. | Unsecured model deployment: The unsecured deployment of the model makes it easier for the attacker to access and steal the model. | The impact of a model theft could be both on the confidentiality of the data used to train the model and the reputation of the organization that developed the model.<br>Confidentiality, Reputation |
+| 脅威エージェント/攻撃手法 | セキュリティ上の弱点 | 影響 |
+|:-------------------------:|:--------------------:|:----:|
+| 悪用難易度: 4 (この弱点を悪用するために必要な労力は中程度です)<br>ML アプリケーション依存: 4<br>ML オペレーション依存: 3 | 検出難易度: 3 <br>(この攻撃の検出はやや困難です) | 技術的影響: 4 <br>(中程度の技術スキルが必要です)<br> |
+| エージェント/攻撃手法: これは攻撃を実行する主体であり、この場合、機械学習モデルを盗み出そうとする攻撃者のことです。 | 安全でないモデルのデプロイメント: モデルの安全でないデプロイメントにより、攻撃者がモデルにアクセスして盗み出すことが容易になります。 | モデル盗用の影響はモデルの訓練に使用されたデータの機密性とモデルを開発した組織の評判の両方に及ぶ可能性があります。<br>機密性、評判 |
 
-It is important to note that this chart is only a sample based on scenario below, and the actual risk assessment will depend on the specific circumstances of each machine learning system.
+本チャートは下記のシナリオに基づくサンプルに過ぎず、実際のリスク評価は各機械学習システムの具体的な状況によって異なることに注意することが重要です。
 
 
 
 **説明:**
 
-Model stealing attacks occur when an attacker gains access to the model's parameters.
+モデル盗用攻撃は攻撃者がモデルのパラメータにアクセスできるようになることで発生します。
 
 
 **攻撃シナリオの例:**
 
-シナリオ: Stealing a machine learning model from a competitor
+シナリオ: 競合他社から機械学習モデルを盗み出す
 
-A malicious attacker is working for a competitor of a company that has developed a valuable machine learning model. 
-The attacker wants to steal this model so that their company can gain a competitive advantage and start using it for their own purposes.
+悪意のある攻撃者は価値のある機械学習モデルを開発した会社の競合他社に勤務しています。
+攻撃者は会社が競争上の優位を獲得し、自社の目的に使用できるようにするために、このモデルを盗み出そうと考えています。
 
 
 
-The attacker executed this attack by reverse engineering the company's machine learning model, either by disassembling the binary code or by accessing the model's training data and algorithm. 
-Once the attacker has reverse engineered the model, they can use this information to recreate the model and start using it for their own purposes. 
-This can result in significant financial loss for the original company, as well as damage to their reputation.
+攻撃者はバイナリコードを逆アセンブルするか、モデルの訓練データとアルゴリズムにアクセスして、同社の機械学習モデルをリバースエンジニアリングすることで、この攻撃を実行しました。
+いったんモデルをリバースエンジニアリングすると、攻撃者はこの情報を使用してモデルを再作成し、それを自社の目的に使用できるようになります。
+その結果、元の会社には多大な経済的損失が発生するだけでなく、評判も損なわれる可能性があります。
 
 
 
@@ -49,32 +49,32 @@ This can result in significant financial loss for the original company, as well 
 
 **防止方法:**
 
-Encryption: Encrypting the model's code, training data, and other sensitive information can prevent attackers from being able to access and steal the model.
+暗号化: モデルのコード、訓練データ、その他の機密情報を暗号化することで、攻撃者がモデルにアクセスして盗み出すことを防止できます。
 
 
 
-Access Control: Implementing strict access control measures, such as two-factor authentication, can prevent unauthorized individuals from accessing and stealing the model.
+アクセス制御: 二要素認証などの厳格なアクセス制御対策を実装することで、認可されていない個人がモデルにアクセスして盗み出すことを防止できます。
 
 
 
-Regular backups: Regularly backing up the model's code, training data, and other sensitive information can ensure that it can be recovered in the event of a theft.
+定期的なバックアップ: モデルのコード、訓練データ、その他の機密情報を定期的にバックアップすることで、盗難が発生した場合でも確実に復元できます。
 
 
 
-Model Obfuscation: Obfuscating the model's code and making it difficult to reverse engineer can prevent attackers from being able to steal the model.
+モデルの難読化: モデルのコードを難読化してリバースエンジニアリングを困難にすることで、攻撃者がモデルを盗み出すことを防止できます。
 
 
 
-Watermarking: Adding a watermark to the model's code and training data can make it possible to trace the source of a theft and hold the attacker accountable.
+電子透かし: モデルのコードと訓練データに電子透かしを入れることで、盗用元を追跡し、攻撃者に責任を追及できます。
 
 
 
-Legal protection: Securing legal protection for the model, such as patents or trade secrets, can make it more difficult for an attacker to steal the model and can provide a basis for legal action in the event of a theft.
+法的保護: 特許や企業秘密などのモデルの法的保護を確保することで、攻撃者がモデルを盗み出すことをより困難にし、盗難が発生した場合には法的措置の根拠とできます。
 
 
 
 
-Monitoring and auditing: Regularly monitoring and auditing the model's use can help detect and prevent theft by detecting when an attacker is attempting to access or steal the model.
+監視と監査: モデルの使用を定期的に監視し監査することで、攻撃者がモデルへのアクセスや盗難を試みていることを検知して、盗難の検知と防止に役立ちます。
 
 
 
