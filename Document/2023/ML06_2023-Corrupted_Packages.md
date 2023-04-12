@@ -16,68 +16,68 @@ redirect_from:
 
 ---
 
-|                                                     脅威エージェント/攻撃手法                                                        |                            セキュリティ上の弱点                        |                                       影響                                        |
-|:------------------------------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------:|:---------------------------------------------------------------------------------:|
-| 悪用難易度: 5 (Effort required to exploit this weakness is moderate)<br>ML アプリケーション依存: 5 <br>ML オペレーション依存: 3      | 検出難易度: 2<br>(Detection of this attack is not much challenging)    |             技術的影響: 4 <br>(Moderate technical skill required)<br>             |
-| Malicious attacker<br>Modifying code of open-source package used by the machine learning project                                     | Relying on untrusted third-party code                                  | Compromise of the machine learning project and potential harm to the organization |
+| 脅威エージェント/攻撃手法 | セキュリティ上の弱点 | 影響 |
+|:-------------------------:|:--------------------:|:----:|
+| 悪用難易度: 5 (この弱点を悪用するために必要な労力は中程度です)<br>ML アプリケーション依存: 5 <br>ML オペレーション依存: 3 | 検出難易度: 2<br>(この攻撃の検出はそれほど困難ではありません) | 技術的影響: 4 <br>(中程度の技術スキルが必要です)<br> |
+| 悪意のある攻撃者<br>機械学習プロジェクトで使用するオープンソースパッケージを改変します | 信頼できないサードパーティコードに依存しています | 機械学習プロジェクトの危殆化と組織への損害の可能性 |
 
-It is important to note that this chart is only a sample based on scenario below, and the actual risk assessment will depend on the specific circumstances of each machine learning system.
+本チャートは下記のシナリオに基づくサンプルに過ぎず、実際のリスク評価は各機械学習システムの具体的な状況によって異なることに注意することが重要です。
 
 
 
 **説明:**
 
-Corrupted packages attacks occur when an attacker modifies or replaces a machine learning library or model that is used by a system.
+破損パッケージ攻撃は攻撃者がシステムで使用される機械学習ライブラリやモデルを改変したり置換することで発生します。
 
 
 **攻撃シナリオの例:**
 
-シナリオ 1: Attack on a machine learning project in an organization
+シナリオ 1: 組織内の機械学習プロジェクトへの攻撃
 
-A malicious attacker wants to compromise a machine learning project being developed by a large organization. 
-The attacker knows that the project relies on several open-source packages and libraries and wants to find a way to compromise the project.
-
-
-
-The attacker executed the attack by modifying the code of one of the packages that the project relies on, such as NumPy or Scikit-learn. 
-The attacker then uploads this modified version of the package to a public repository, such as PyPI, making it available for others to download and use. 
-When the victim organization downloads and installs the package, the attacker\'s malicious code is also installed and can be used to compromise the project.
+悪意のある攻撃者は大規模な組織で開発されている機械学習プロジェクトを侵害しようとしています。
+攻撃者はプロジェクトがいくつかのパッケージやライブラリに依存していることを知っており、プロジェクトを侵害する方法を見つけたいと考えています。
 
 
 
+攻撃者は NumPy や Scikit-learn などのプロジェクトが依存しているパッケージの一つのコードを改変することで攻撃を実行しました。
+攻撃者はこの改変版のパッケージを PyPI などのパブリックリポジトリにアップロードし、他の人がダウンロードして使用できるようにします。
+標的となった組織がこのパッケージをダウンロードしてインストールすると、攻撃者の悪意のあるコードもインストールされ、そのプロジェクトを侵害するために使用される可能性があります。
 
 
-This type of attack can be particularly dangerous as it can go unnoticed for a long time, since the victim may not realize that the package they are using has been compromised. 
-The attacker\'s malicious code could be used to steal sensitive information, modify results, or even cause the machine learning model to fa
+
+
+
+この種の攻撃は被害者が使用しているパッケージが侵害されていることに気付かない可能性があり、長期間見つからない可能性があるため、特に危険です。
+攻撃者の悪意あるコードを使用して、機密情報を盗んだり、結果を改変したり、機械学習モデルの誤作動を引き起こす可能性があります。
 
 
 
 
 **防止方法:**
 
-Verify Package Signatures: Before installing any packages, verify the digital signatures of the packages to ensure that they have not been tampered with.
+パッケージ署名を検証する: パッケージをインストールする前に、パッケージのデジタル署名を検証し、改竄されていないことを確認します。
 
 
 
-Use Secure Package Repositories: Use secure package repositories, such as Anaconda, that enforce strict security measures and have a vetting process for packages.
+安全なパッケージリポジトリを使用する: Anaconda などの厳格なセキュリティ対策を実施してパッケージの審査プロセスがある安全なパッケージリポジトリを使用します。
 
 
 
-Keep Packages Up-to-date: Regularly update all packages to ensure that any vulnerabilities are patched.
+パッケージを最新に保つ: すべてのパッケージを定期的に更新して、脆弱性にパッチが適用されることを確保します。
 
 
-Use Virtual Environments: Use virtual environments to isolate packages and libraries from the rest of the system. 
-This makes it easier to detect any malicious packages and remove them.
+仮想環境を使用する: 仮想環境を使用して、パッケージやライブラリをシステムの他の部分から分離します。
+これにより悪意のあるパッケージの検知と削除が容易になります。
 
 
-Perform Code Reviews: Regularly perform code reviews on all packages and libraries used in a project to detect any malicious code.
+コードレビューを実施する: プロジェクトで使用するすべてのパッケージとライブラリについて定期的にコードレビューを実施して、悪意のあるコードを検知します。
 
 
-Use Package Verification Tools: Use tools such as PEP 476 and Secure Package Install to verify the authenticity and integrity of packages before installation.
+パッケージ検証ツールを使用する: PEP 476 や Secure Package Install などのツールを使用して、インストール前にパッケージの真正性と完全性を検証します。
 
 
 
-Educate Developers: Educate developers on the risks associated with Corrupted Packages Attacks and the importance of verifying packages before installation.
+開発者を教育する: 破損パッケージ攻撃に関連するリスクと、インストール前にパッケージを検証することの重要性を開発者に教育します。
 
 
 
