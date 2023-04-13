@@ -16,62 +16,62 @@ redirect_from:
 
 ---
 
-|                                                                                                                                                   脅威エージェント/攻撃手法                                                                                                                                                 |                                                                                                             セキュリティ上の弱点                                                                                                         |                                                                                                            影響                                                                                                              |
-|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| 悪用難易度: 4 (Easy)<br>ML アプリケーション依存: 4<br>The attack specifically targets the machine learning application and can cause significant harm to the model and the organization <br>ML オペレーション依存: 3<br>The attack requires knowledge of machine learning operations but can be executed with relative ease |                                   検出難易度: 2<br>The attack may be difficult to detect as the results produced by the compromised model may appear to be correct and consistent with expectations                                      |                技術的影響: 4 <br>The attack requires a high level of technical expertise in machine learning and a willingness to compromise the integrity of the training dataset or pre-trained models.<br>                |
-| Attacker with knowledge of machine learning and access to the training dataset or pre-trained models                                                                                                                                                                                                                        | Lack of proper data protection measures for the training dataset and pre-trained models<br>Insecure storage and sharing of pre-trained models<br>Lack of proper data protection measures for the pre-trained models and training dataset | Misleading or incorrect results from the machine learning model<br>Confidentiality breach of sensitive information in the training dataset<br>Reputational harm to the organization<br>Legal or regulatory compliance issues |
+| 脅威エージェント/攻撃手法 | セキュリティ上の弱点 | 影響 |
+|:-------------------------:|:--------------------:|:----:|
+| 悪用難易度: 4 (容易)<br>ML アプリケーション依存: 4<br>この攻撃は特に機械学習アプリケーションを標的としており、モデルや組織に重大な損害を与える可能性があります<br>ML オペレーション依存: 3<br>この攻撃には機械学習操作の知識が必要ですが、比較的容易に実行できます | 検出難易度: 2<br>侵害されたモデルによって生成された結果は、一見すると正しく、期待結果と一致しているように見えるため、攻撃を検出することは困難かもしれません | 技術的影響: 4 <br>この攻撃には機械学習に関する高度な技術的専門知識と、訓練データセットや事前訓練済みモデルの完全性を侵害する意欲が必要です。<br> |
+| 機械学習の知識があり、訓練データセットや事前訓練済みモデルにアクセスできる攻撃者 | 訓練データセットや事前訓練済みモデルに対する適切なデータ保護対策の欠如<br>事前訓練済みモデルの安全でない保存と共有<br>事前訓練済みモデルと訓練データセットに対する適切なデータ保護対策の欠如 | 機械学習モデルからの誤解を招く、あるいは不正確な結果<br>訓練データセット内の機密情報に対する機密性の侵害<br>組織への風評被害<br>法律や規制の遵守問題 |
 
 
 
-It is important to note that this chart is only a sample based on scenario below, and the actual risk assessment will depend on the specific circumstances of each machine learning system.
+本チャートは下記のシナリオに基づくサンプルに過ぎず、実際のリスク評価は各機械学習システムの具体的な状況によって異なることに注意することが重要です。
 
 
 
 **説明:**
 
-Transfer learning attacks occur when an attacker trains a model on one task and then fine-tunes it on another task to cause it to behave in an undesirable way.
+転移学習攻撃は攻撃者があるタスクでモデルを訓練した後、別のタスクでモデルを微調節して望ましくない動作をさせることで発生します。
 
 
 
 **攻撃シナリオの例:**
 
-An attacker trains a machine learning model on a malicious dataset that contains manipulated images of faces. 
-The attacker wants to target a face recognition system used by a security firm for identity verification.
+攻撃者は操作された顔画像を含む悪意のあるデータセットで機械学習モデルを訓練します。
+攻撃者はセキュリティ企業が人物検証に使用する顔認識システムを標的にしようと考えています。
 
 
 
-The attacker then transfers the model's knowledge to the target face recognition system. 
-The target system starts using the attacker's manipulated model for identity verification.
+攻撃者はモデルの知識を標的の顔認識システムに転送します。
+標的のシステムは攻撃者が操作したモデルを使用して人物検証を開始します。
 
 
-As a result, the face recognition system starts making incorrect predictions, allowing the attacker to bypass the security and gain access to sensitive information. 
-For example, the attacker could use a manipulated image of themselves and the system would identify them as a legitimate user.
-
-
-
-
-**[防止方法:]{.underline}**
-
-Regularly monitor and update the training datasets: Regularly monitoring and updating the training datasets can help prevent the transfer of malicious knowledge from the attacker\'s model to the target model.
-
-
-
-Use secure and trusted training datasets: Using secure and trusted training datasets can help prevent the transfer of malicious knowledge from the attacker\'s model to the target model.
-
-
-
-Implement model isolation: Implementing model isolation can help prevent the transfer of malicious knowledge from one model to another. 
-For example, separating the training and deployment environments can prevent attackers from transferring knowledge from the training environment to the deployment environment.
+その結果、顔認識システムは不正確な予測を行うようになり、攻撃者はセキュリティをバイパスして機密情報にアクセスできるようになります。
+たとえば、攻撃者は操作した自分自身の画像を使用して、システムは攻撃者を正当なユーザーとして識別するかもしれません。
 
 
 
 
-Use differential privacy: Using differential privacy can help protect the privacy of individual records in the training dataset and prevent the transfer of malicious knowledge from the attacker's model to the target model.
+**防止方法:**
+
+訓練データセットを定期的に監視して更新する: 訓練データを定期的に監視して更新することで、攻撃者のモデルからターゲットのモデルへの悪意のある知識の転送を防止できます。
+
+
+
+安全で信頼できる訓練データセットを使用する: 安全で信頼できる訓練データセットを使用することで、攻撃者のモデルからターゲットのモデルへの悪意のある知識の転送を防止できます。
+
+
+
+モデルの分離を実装する: モデルの分離を実装することで、あるモデルから別のモデルへの悪意のある知識の転送を防止できます。
+たとえば、訓練環境とデプロイメント環境を分離することで、攻撃者が訓練環境からデプロイメント環境に知識を転送することを防止できます。
 
 
 
 
-Perform regular security audits: Regular security audits can help identify and prevent transfer learning attacks by identifying and addressing vulnerabilities in the system.
+差分プライバシーを使用する: 差分プライバシーを使用することで、訓練データセット内の個々のレコードのプライバシーを保護し、攻撃者のモデルからターゲットのモデルへの悪意のある知識の転送を防止できます。
+
+
+
+
+定期的にセキュリティ監査を実施する: 定期的にセキュリティ監査を行い、システム内の脆弱性を特定して対処することで、転移学習攻撃を特定して防止できます。
 
 
 
