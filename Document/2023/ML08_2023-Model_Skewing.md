@@ -16,28 +16,28 @@ redirect_from:
 
 ---
 
-|                                                                                                                          脅威エージェント/攻撃手法                                                                                                                             |                                                                                                                                            セキュリティ上の弱点                                                                                                                                        |                                                                                                                                                               影響                                                                                                                                                                 |
-|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| 悪用難易度: 5 (Easy)<br>ML アプリケーション依存: 4<br>the attacker has a clear understanding of the machine learning project and its vulnerabilities.<br>ML オペレーション依存: 3<br>manipulation of the training data requires knowledge of the machine learning process      |                                                                                                      検出難易度: 2<br>the model skewing might not be easily noticeable during the testing phase                                                                                                        |                                                                                                                          技術的影響: 4 <br>manipulation of the training data is a technically complex task                                                                                                                         |
-| The attackers in a Model Skewing attack could be individuals with malicious intent, or a third-party with a vested interest in manipulating the outcomes of a model.                                                                                                           | The security weakness in a Model Skewing attack is the inability of the model to accurately reflect the underlying distribution of the training data. This can occur due to factors such as data bias, incorrect sampling of the data, or manipulation of the data or training process by an attacker. | The impact of a Model Skewing attack can be significant and can lead to incorrect decisions being made based on the output of the model. This can result in financial loss, damage to reputation, and even harm to individuals if the model is being used for critical applications such as medical diagnosis or criminal justice. |
+| 脅威エージェント/攻撃手法 | セキュリティ上の弱点 | 影響  |
+|:-------------------------:|:--------------------:|:-----:|
+| 悪用難易度: 5 (容易)<br>ML アプリケーション依存: 4<br>攻撃者は機械学習プロジェクトとその脆弱性を明確に理解しています。<br>ML オペレーション依存: 3<br>訓練データの操作には機械学習プロセスの知識が必要です。 | 検出難易度: 2<br>モデル歪曲はテストフェーズで気づくことが容易ではないかもしれません | 技術的影響: 4 <br>訓練データの操作は技術的に複雑な作業です。 |
+| モデル歪曲攻撃の攻撃者は悪意のある個人、もしくはモデルの結果を操作することに既得権を持つ第三者である可能性があります。                                                                                                           | モデル歪曲攻撃におけるセキュリティ上の弱点はモデルが訓練データの基本的な分布を正確に反映できないことです。これはデータの偏り、データの不正確なサンプリング、攻撃者によるデータや訓練プロセスの操作などの要因によって発生する可能性があります。 | モデル歪曲攻撃の影響は大きく、モデルの出力に基づいて誤った決定がなされる可能性があります。医療診断や刑事裁判などの重要な用途にモデル使用されている場合、経済的損失、風評被害、さらには個人への危害につながる可能性があります。 |
 
 
-It is important to note that this chart is only a sample based on scenario below, and the actual risk assessment will depend on the specific circumstances of each machine learning system.
+本チャートは下記のシナリオに基づくサンプルに過ぎず、実際のリスク評価は各機械学習システムの具体的な状況によって異なることに注意することが重要です。
 
 
 
 **説明:**
 
-Model skewing attacks occur when an attacker manipulates the distribution of the training data to cause the model to behave in an undesirable way.
+モデル歪曲攻撃は攻撃者が訓練データの分布を操作してモデルを望ましくない動作をさせることで発生します。
 
 
 
 **攻撃シナリオの例:**
 
-A financial institution is using a machine learning model to predict the creditworthiness of loan applicants, and the model's predictions are integrated into their loan approval process. 
-An attacker wants to increase their chances of getting a loan approved, so they manipulate the feedback loop in the MLOps system. 
-The attacker provides fake feedback data to the system, indicating that high-risk applicants have been approved for loans in the past, and this feedback is used to update the model's training data. 
-As a result, the model's predictions are skewed towards low-risk applicants, and the attacker's chances of getting a loan approved are significantly increased.
+ある金融機関は機械学習モデルを使用してローン申請者の信用度を予測しており、モデルの予測はローン承認プロセスに統合されています。
+攻撃者はローンが承認される可能性を高めたいと考え、MLOps システムのフィードバックループを操作します。
+攻撃者はリスクの高い申請者が過去にローンを承認されたことを示す偽のフィードバックデータをシステムに提供し、このフィードバックを使用してモデルの訓練データを更新します。
+その結果、モデルの予測は低リスクの申請者であると歪められ、攻撃者はローンを承認される可能性が大幅に高まります。
 
 
 
@@ -45,34 +45,34 @@ As a result, the model's predictions are skewed towards low-risk applicants, and
 
 
 
-This type of attack can compromise the accuracy and fairness of the model, leading to unintended consequences and potential harm to the financial institution and its customers.
+この種の攻撃はモデルの正確性と公平性を損ない、意図しない結果を招き、金融機関やその顧客に損害を与える可能性があります。
 
 
 
 **防止方法:**
 
-Implement robust access controls: Ensure that only authorized personnel have access to the MLOps system and its feedback loops, and that all activities are logged and audited.
+堅牢なアクセス制御を実装する: 認可された担当者のみが MLOps システムとそのフィードバックループにアクセスできるようにし、すべてのアクティビティがログ記録され監査されるようにします。
 
 
 
-Verify the authenticity of feedback data: Use techniques such as digital signatures and checksums to verify that the feedback data received by the system is genuine, and reject any data that does not match the expected format.
+フィードバックデータの真正性を検証する: デジタル署名やチェックサムなどの技法を使用して、システムが受け取ったフィードバックデータが本物であることを検証し、期待される形式と一致しないデータはすべて拒否します。
 
 
 
 
-Use data validation and cleaning techniques: Clean and validate the feedback data before using it to update the training data, to minimize the risk of incorrect or malicious data being used.
+データのバリデーションとクリーニングの技法を使用する: フィードバックデータを使用して訓練データを更新する前にクリーニングと検証を行い、不正確なデータや悪意のあるデータが使用されるリスクを最小限に抑えます。
 
 
 
-Implement anomaly detection: Use techniques such as statistical and machine learning-based methods to detect and alert on anomalies in the feedback data, which could indicate an attack.
+異常検知を実装する: 統計的手法や機械学習ベースの手法などの技法を使用して、攻撃を示唆するようなフィードバックデータの異常を検知して警告します。
 
 
 
-Regularly monitor the model's performance: Continuously monitor the performance of the model, and compare its predictions with actual outcomes to detect any deviation or skewing. 
+モデルの性能を定期的に監視する: モデルの性能を継続的に監視し、その予測と実際の結果を比較して、偏りや歪みを検知します。
 
 
 
-Continuously train the model: Regularly retrain the model using updated and verified training data, to ensure that it continues to reflect the latest information and trends.
+モデルを継続的に訓練する: 更新および検証された訓練データを使用してモデルを定期的に再訓練し、最新の情報や傾向が引き続き反映されるようにします。
 
 
 
