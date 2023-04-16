@@ -16,54 +16,54 @@ redirect_from:
 
 ---
 
-|                                                                               脅威エージェント/攻撃手法                                                                                  |                                                                          セキュリティ上の弱点                                                                      |                                                                                                                                     影響                                                                                                                                      |
-|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-|                                                 悪用難易度: 4 (Easy)<br>ML アプリケーション依存: 4<br>ML オペレーション依存: 4<br>                                                       |                                                                        検出難易度: 3<br>                                                                           |                                                                                                                               技術的影響: 3<br>                                                                                                                               |
-| Malicious individuals or organizations with knowledge and resources to manipulate deep learning models.<br>Malicious insiders within the organization developing the deep learning model | Insufficient access controls to the model's code and parameters<br>Lack of proper secure coding practices<br>Inadequate monitoring and logging of model's activity | Model's predictions can be manipulated to achieve desired results.<br>Confidential information within the model can be extracted.<br>Decisions based on the model's predictions can be impacted negatively.<br>Reputation and credibility of the organization can be affected |
+| 脅威エージェント/攻撃手法 | セキュリティ上の弱点 | 影響 |
+|:-------------------------:|:--------------------:|:----:|
+| 悪用難易度: 4 (容易)<br>ML アプリケーション依存: 4<br>ML オペレーション依存: 4<br> | 検出難易度: 3<br> | 技術的影響: 3<br> |
+| 深層学習モデルを操作する知識とリソースを持つ悪意のある個人または組織。<br>深層学習モデルを開発している内の悪意のある内部関係者 | モデルのコードやパラメータへの不十分なアクセス制御<br>適切なセキュアコーディングプラクティスの欠落<br>モデルのアクティビティの不適切な監視とログ記録 | モデルの予測を操作して、期待した結果を得ることができます。<br>モデル内の機密情報を抽出できます。<br>モデルの予測に基づく決定は悪影響を受ける可能性があります。<br>組織の評判や信用に影響を及ぼす可能性があります |
 
 
-It is important to note that this chart is only a sample based on scenario below, and the actual risk assessment will depend on the specific circumstances of each machine learning system.
+本チャートは下記のシナリオに基づくサンプルに過ぎず、実際のリスク評価は各機械学習システムの具体的な状況によって異なることに注意することが重要です。
 
 
 
 **説明:**
 
-Neural net reprogramming attacks occur when an attacker manipulates the model\'s parameters to cause it to behave in an undesirable way.
+ニューラルネットリプログラミング攻撃は攻撃者がモデルのパラメータを操作して望ましくない方法で動作させることで発生します。
 
 
 **攻撃シナリオの例:**
 
-Consider a scenario where a bank is using a machine learning model to identify handwritten characters on cheques to automate their clearing process. 
-The model has been trained on a large dataset of handwritten characters, and it has been designed to accurately identify the characters based on specific parameters such as size, shape, slant, and spacing.
+ある銀行では機械学習モデルを使用して小切手の手書き文字を識別し、精算プロセスを自動化するというシナリオを考えてみます。
+モデルは手書き文字の大規模なデータセットで訓練され、サイズ、形状、傾き、間隔などの特定のパラメータに基づいて文字を正確に識別するように設計されています。
 
 
 
 
 
-An attacker who wants to exploit the Neural Net Reprogramming attack may manipulate the parameters of the model by altering the images in the training dataset or directly modifying the parameters in the model. 
-This can result in the model being reprogrammed to identify characters differently. 
-For example, the attacker could change the parameters so that the model identifies the character "5" as the character "2", leading to incorrect amounts being processed.
+ニューラルネットリプログラミング攻撃を悪用しようとする攻撃者は訓練データセットの画像を改変したり、モデル内のパラメータを直接変更することによって、モデルのパラメータを操作できます。
+モデルがリプログラムされた結果、文字が異なるもので特定される可能性があります。
+たとえば、攻撃者は文字 "5" を文字 "2" として識別するようにパラメータを変更し、誤った金額が処理されるようにできます。
 
 
 
 
 
-The attacker can exploit this vulnerability by introducing forged cheques into the clearing process, which the model will process as valid due to the manipulated parameters. 
-This can result in significant financial loss to the bank.
+攻撃者はこの脆弱性を悪用して、偽造小切手を精算プロセスに入れることができます。モデルは操作されたパラメータにより、これを有効なものとして処理します。
+これは銀行に重大な経済的損失をもたらす可能性があります。
 
 
 
 **防止方法:**
 
-Regularization: Adding regularization techniques like L1 or L2 regularization to the loss function helps to prevent overfitting and reduce the chance of neural net reprogramming attacks.
+正則化: L1 正則化や L2 正則化などの正則化技法を損失関数に追加することで、過剰適合を防止し、ニューラルネットリプログラミング攻撃の可能性を軽減できます。
 
 
 
-Robust Model Design: Designing models with robust architectures and activation functions can help reduce the chances of successful reprogramming attacks.
+ロバストモデル設計: ロバストアーキテクチャとアクティベーション関数を持つモデルを設計することで、リプログラミング攻撃が成功する可能性を軽減できます。
 
 
 
-Cryptographic Techniques: Cryptographic techniques can be used to secure the parameters and weights of the model, and prevent unauthorized access or manipulation of these parameters.
+暗号化技法: 暗号化技法を使用してモデルのパラメータとウェイトを保護することで、これらのパラメータの認可されていないアクセスや操作を防止できます。
 
 
 
