@@ -1,5 +1,4 @@
 ---
-
 layout: col-sidebar
 title: OWASP Machine Learning Security Top Ten
 tags: mltop10
@@ -7,8 +6,7 @@ type: documentation
 altfooter: true
 level: 4
 auto-migrated: 0
-pitch: 
-
+pitch:
 ---
 
 ## コミュニケーション
@@ -21,7 +19,7 @@ pitch:
 
 - フィードバックの提供や潜在的なバグの報告
 - プロジェクトの拡張の提案
-- [バグ](https://github.com/owasp/www-project-machine-learning-security-top-10?q=is%3Aopen+is%3Aissue+label%3Abug) の修正や [拡張](https://github.com/owasp/www-project-machine-learning-security-top-10/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement) の実装
+- [バグ](https://github.com/owasp/www-project-machine-learning-security-top-10/issues?q=is%3Aopen+is%3Aissue+label%3Abug) の修正や [拡張](https://github.com/owasp/www-project-machine-learning-security-top-10/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement) の実装
 
 ## Top 10 機械学習セキュリティリスク
 
