@@ -22,6 +22,10 @@ This is the unofficial Japanese translation of the [OWASP Machine Learning Secur
 * [**ML09:2023 出力完全性攻撃 (Output Integrity Attack)**](Document/2023/ML09_2023-Output_Integrity_Attack.md)
 * [**ML10:2023 ニューラルネットリプログラミング (Neural Net Reprogramming)**](Document/2023/ML10_2023-Neural_Net_Reprogramming.md)
 
+## License
+
+[Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)
+
 ## Author (日本語訳)
 
 [Koki Takeyama](https://github.com/coky-t)
