@@ -1,19 +1,23 @@
 ---
-
+layout: col-sidebar
+type: documentation
+altfooter: true
+level: 4
+auto-migrated: 0
+pitch:
 document: OWASP Machine Learning Security Top Ten 2023
 year: 2023
 order: 6
-title: ML06:2023:Corrupted_Packages (破損パッケージ)
+title: ML06:2023 Corrupted Packages (破損パッケージ)
 lang: ja
 author:
 contributors:
-tags: OWASP Top Ten 2023, Top Ten, ML06:2023
+tags: OWASP Top Ten 2023, Top Ten, ML06:2023, mltop10
 exploitability: 5
 prevalence:
 detectability: 2
 technical: 4
 redirect_from:
-
 ---
 
 | 脅威エージェント/攻撃手法 | セキュリティ上の弱点 | 影響 |

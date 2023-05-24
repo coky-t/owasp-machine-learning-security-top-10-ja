@@ -1,19 +1,23 @@
 ---
-
+layout: col-sidebar
+type: documentation
+altfooter: true
+level: 4
+auto-migrated: 0
+pitch:
 document: OWASP Machine Learning Security Top Ten 2023
 year: 2023
 order: 6
-title: ML04:2023:Membership_Inference_Attack (メンバーシップ推論攻撃)
+title: ML04:2023 Membership Inference Attack (メンバーシップ推論攻撃)
 lang: ja
 author:
 contributors:
-tags: OWASP Top Ten 2023, Top Ten, ML04:2023
+tags: OWASP Top Ten 2023, Top Ten, ML04:2023, mltop10
 exploitability:
 prevalence:
 detectability:
 technical:
 redirect_from:
-
 ---
 
 | 脅威エージェント/攻撃手法 | セキュリティ上の弱点 | 影響 |

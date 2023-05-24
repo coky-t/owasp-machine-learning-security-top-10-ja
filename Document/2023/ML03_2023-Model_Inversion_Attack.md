@@ -1,26 +1,29 @@
 ---
-
+layout: col-sidebar
+type: documentation
+altfooter: true
+level: 4
+auto-migrated: 0
+pitch:
 document: OWASP Machine Learning Security Top Ten 2023
 year: 2023
 order: 6
-title: ML03:2023:Model_Inversion_Attack (モデル反転攻撃)
+title: ML03:2023 Model Inversion Attack (モデル反転攻撃)
 lang: ja
 author:
 contributors:
-tags: OWASP Top Ten 2023, Top Ten, ML03:2023
+tags: OWASP Top Ten 2023, Top Ten, ML03:2023, mltop10
 exploitability: 4
 prevalence:
 detectability: 2
 technical: 4
 redirect_from:
-
 ---
 
 | 脅威エージェント/攻撃手法 | セキュリティ上の弱点 | 影響 |
 |:-------------------------:|:--------------------:|:----:|
 | 悪用難易度: 4 (悪用は中程度です)<br>ML アプリケーション依存: 5 <br>ML オペレーション依存: 3 | 検出難易度: 2<br>(制限があります) | 技術的影響: 4<br>(攻撃を実行するために必要な中程度の技術的知識)<br> |
 | 脅威エージェント: モデルと入力データにアクセスできる攻撃者<br>攻撃手法: モデルに画像を送り、モデルのレスポンスを解析します | モデルの出力を使用して、入力データに関する機密情報を推論できます | 入力データに関する機密情報が危殆化する可能性があります |
-
 
 本チャートは下記のシナリオに基づくサンプルに過ぎず、実際のリスク評価は各機械学習システムの具体的な状況によって異なることに注意することが重要です。
 

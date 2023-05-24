@@ -1,26 +1,29 @@
 ---
-
+layout: col-sidebar
+type: documentation
+altfooter: true
+level: 4
+auto-migrated: 0
+pitch:
 document: OWASP Machine Learning Security Top Ten 2023
 year: 2023
 order: 6
-title: ML10:2023:Neural_Net_Reprogramming (ニューラルネットリプログラミング)
+title: ML10:2023 Neural Net Reprogramming (ニューラルネットリプログラミング)
 lang: ja
 author:
 contributors:
-tags: OWASP Top Ten 2023, Top Ten, ML10:2023
+tags: OWASP Top Ten 2023, Top Ten, ML10:2023, mltop10
 exploitability: 4
 prevalence:
 detectability: 3
 technical: 3
 redirect_from:
-
 ---
 
 | 脅威エージェント/攻撃手法 | セキュリティ上の弱点 | 影響 |
 |:-------------------------:|:--------------------:|:----:|
 | 悪用難易度: 4 (容易)<br>ML アプリケーション依存: 4<br>ML オペレーション依存: 4<br> | 検出難易度: 3<br> | 技術的影響: 3<br> |
 | 深層学習モデルを操作する知識とリソースを持つ悪意のある個人または組織。<br>深層学習モデルを開発している内の悪意のある内部関係者 | モデルのコードやパラメータへの不十分なアクセス制御<br>適切なセキュアコーディングプラクティスの欠落<br>モデルのアクティビティの不適切な監視とログ記録 | モデルの予測を操作して、期待した結果を得ることができます。<br>モデル内の機密情報を抽出できます。<br>モデルの予測に基づく決定は悪影響を受ける可能性があります。<br>組織の評判や信用に影響を及ぼす可能性があります |
-
 
 本チャートは下記のシナリオに基づくサンプルに過ぎず、実際のリスク評価は各機械学習システムの具体的な状況によって異なることに注意することが重要です。
 

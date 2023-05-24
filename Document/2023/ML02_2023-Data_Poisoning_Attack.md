@@ -1,26 +1,29 @@
 ---
-
+layout: col-sidebar
+type: documentation
+altfooter: true
+level: 4
+auto-migrated: 0
+pitch:
 document: OWASP Machine Learning Security Top Ten 2023
 year: 2023
 order: 6
-title: ML02:2023:Data_Poisoning_Attack (データポイズニング攻撃)
+title: ML02:2023 Data Poisoning Attack (データポイズニング攻撃)
 lang: ja
 author:
 contributors:
-tags: OWASP Top Ten 2023, Top Ten, ML02:2023
+tags: OWASP Top Ten 2023, Top Ten, ML02:2023, mltop10
 exploitability: 3
 prevalence:
 detectability: 2
 technical: 4
 redirect_from:
-
 ---
 
 | 脅威エージェント/攻撃手法 | セキュリティ上の弱点 | 影響 |
 |:-------------------------:|:--------------------:|:----:|
 | 悪用難易度: 3 (悪用は中程度です)<br>ML アプリケーション依存: 4 <br>ML オペレーション依存: 3 | 検出難易度: 2<br>(制限があります) | 技術的影響: 4<br> |
 | 脅威エージェント: モデルに使用する訓練データにアクセスできる攻撃者。<br>攻撃手法: 攻撃者は訓練データセットに悪意のあるデータを注入します。 | データバリデーションの欠如と訓練データの不十分な監視。 | モデルは汚染されたデータに基づいて誤った予測を行い、誤った判断を下して深刻な事態を招く可能性があります。 |
-
 
 本チャートは下記のシナリオに基づくサンプルに過ぎず、実際のリスク評価は各機械学習システムの具体的な状況によって異なることに注意することが重要です。
 
