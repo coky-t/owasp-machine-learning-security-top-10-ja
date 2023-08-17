@@ -21,7 +21,7 @@ OWASP 機械学習セキュリティ Top 10 プロジェクトの主な目的は
 
 
 
-すべての貢献者はプロジェクトの [行動規範](./CODE_OF_CONDUCT.md) に従う必要があります。
+すべての貢献者はプロジェクトの [行動規範](https://github.com/OWASP/www-project-machine-learning-security-top-10/blob/master/CODE_OF_CONDUCT.md) に従う必要があります。
 ご感想、ご意見、問題点、ご質問は [次のフォームを使用](https://github.com/OWASP/www-project-machine-learning-security-top-10/issues/new?assignees=shsingh&labels=issues%2Fgeneral%2Cissues%2Ftriage&projects=&template=feedback-report.yaml&title=%5BFEEDBACK%5D%3A+) してください。
 
 
