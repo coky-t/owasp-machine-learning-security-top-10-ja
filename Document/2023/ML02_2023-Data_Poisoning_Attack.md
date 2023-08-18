@@ -8,7 +8,7 @@ document: OWASP Machine Learning Security Top Ten 2023
 year: 2023
 order: 2
 title: ML02:2023 Data Poisoning Attack (データポイズニング攻撃)
-lang: en
+lang: ja
 tags:
   [
     OWASP Machine Learning Security Top Ten 2023,

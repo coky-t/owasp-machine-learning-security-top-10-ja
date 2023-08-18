@@ -8,7 +8,7 @@ document: OWASP Machine Learning Security Top Ten 2023
 year: 2023
 order: 1
 title: ML01:2023 Adversarial Attack (敵対的攻撃)
-lang: en
+lang: ja
 tags:
   [
     OWASP Machine Learning Security Top Ten 2023,

@@ -8,7 +8,7 @@ document: OWASP Machine Learning Security Top Ten 2023
 year: 2023
 order: 3
 title: ML03:2023 Model Inversion Attack (モデル反転攻撃)
-lang: en
+lang: ja
 tags:
   [
     OWASP Machine Learning Security Top Ten 2023,
