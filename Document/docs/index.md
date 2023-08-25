@@ -1,20 +1,36 @@
-# はじめに
+---
+title: Introduction
+comments: false
+---
 
-## プロジェクトコミュニケーション
+::: {.callout-important}
 
-- [OWASP Slack](https://owasp.org/slack/invite) #project-mlsec-top-10
-- [Github Discussions](https://github.com/OWASP/www-project-machine-learning-security-top-10/discussions)
-- [Meeting Notes](https://github.com/OWASP/www-project-machine-learning-security-top-10/issues?q=label%3Ameeting)
+### 重要
 
-## Top 10 機械学習セキュリティリスク
+_本作の現在のバージョンはドラフトであり、頻繁に変更されます。
+貢献の仕方やプロジェクトのリリースタイムラインについては [project wiki](https://github.com/OWASP/www-project-machine-learning-security-top-10/wiki) を参照してください。_
 
-- [**ML01:2023 敵対的攻撃 (Adversarial Attack)**](ML01_2023-Adversarial_Attack.md)
-- [**ML02:2023 データポイズニング攻撃 (Data Poisoning Attack)**](ML02_2023-Data_Poisoning_Attack.md)
-- [**ML03:2023 モデル反転攻撃 (Model Inversion Attack)**](ML03_2023-Model_Inversion_Attack.md)
-- [**ML04:2023 メンバーシップ推論攻撃 (Membership Inference Attack)**](ML04_2023-Membership_Inference_Attack.md)
-- [**ML05:2023 モデル盗用 (Model Stealing)**](ML05_2023-Model_Stealing.md)
-- [**ML06:2023 破損パッケージ (Corrupted Packages)**](ML06_2023-Corrupted_Packages.md)
-- [**ML07:2023 転移学習攻撃 (Transfer Learning Attack)**](ML07_2023-Transfer_Learning_Attack.md)
-- [**ML08:2023 モデル歪曲 (Model Skewing)**](ML08_2023-Model_Skewing.md)
-- [**ML09:2023 出力完全性攻撃 (Output Integrity Attack)**](ML09_2023-Output_Integrity_Attack.md)
-- [**ML10:2023 ニューラルネットリプログラミング (Neural Net Reprogramming)**](ML10_2023-Neural_Net_Reprogramming.md)
+
+:::
+
+## 概要
+
+OWASP 機械学習セキュリティ Top 10 プロジェクトの主な目的は機械学習システムのセキュリティ問題の Top 10 の概要を提供することです。
+そのため、このプロジェクトの主な目標は、業界の同業者によってレビューされた高品質の成果物を作成することです。
+
+
+
+## 対象読者
+
+このプロジェクトの成果物の主な対象者は開発者、機械学習エンジニア、運用担当者、アプリケーションセキュリティ専門家です。
+これらのロールではそれぞれ、機械学習システムを構築、運用、保守していますが、本コンテンツはそれらのみを対象としているわけではありません。
+コンテンツは特定の技術領域に必要な理解レベルを適切なところに指定することを目指しています。
+
+
+
+
+## スコープ
+
+このプロジェクトでは機械学習システムのセキュリティ問題の Top 10 の概要を提供します。
+機械学習システムの急速な普及のため、OWASP や他の組織の中には関連するプロジェクトがあり、このプロジェクトよりスコープが狭いものも広いものもあります。
+一例として、敵対的攻撃は脅威のカテゴリですが、このプロジェクトでは機械学習運用およびエンジニアリングのワークフローのセキュリティ衛生など、敵対的でないシナリオもカバーします。
