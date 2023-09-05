@@ -9,4 +9,4 @@
 - [ML07:2023 転移学習攻撃 (Transfer Learning Attack)](ML07_2023-Transfer_Learning_Attack.md)
 - [ML08:2023 モデル歪曲 (Model Skewing)](ML08_2023-Model_Skewing.md)
 - [ML09:2023 出力完全性攻撃 (Output Integrity Attack)](ML09_2023-Output_Integrity_Attack.md)
-- [ML10:2023 ニューラルネットリプログラミング (Neural Net Reprogramming)](ML10_2023-Neural_Net_Reprogramming.md)
+- [ML10:2023 モデルポイズニング (Model Poisoning)](ML10_2023-Model_Poisoning.md)
