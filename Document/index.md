@@ -29,7 +29,7 @@ OWASP 機械学習セキュリティ Top 10 プロジェクトの主な目的は
 
 ## Top 10 機械学習セキュリティリスク
 
-- [**ML01:2023 敵対的攻撃 (Adversarial Attack)**](docs/ML01_2023-Adversarial_Attack.md)
+- [**ML01:2023 入力操作攻撃 (Input Manipulation Attack)**](docs/ML01_2023-Input_Manipulation_Attack.md)
 - [**ML02:2023 データポイズニング攻撃 (Data Poisoning Attack)**](docs/ML02_2023-Data_Poisoning_Attack.md)
 - [**ML03:2023 モデル反転攻撃 (Model Inversion Attack)**](docs/ML03_2023-Model_Inversion_Attack.md)
 - [**ML04:2023 メンバーシップ推論攻撃 (Membership Inference Attack)**](docs/ML04_2023-Membership_Inference_Attack.md)
