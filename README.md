@@ -6,6 +6,7 @@ This is the unofficial Japanese translation of the [OWASP Machine Learning Secur
 
 - Project Site - <https://owasp.org/www-project-machine-learning-security-top-10/>
 - Project Repository - <https://github.com/OWASP/www-project-machine-learning-security-top-10>
+- Document Repository - <https://mltop10.info/>
 
 # OWASP 機械学習セキュリティ Top 10 日本語版
 
