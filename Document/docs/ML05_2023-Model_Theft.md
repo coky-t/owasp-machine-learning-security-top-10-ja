@@ -7,7 +7,7 @@ auto-migrated: 0
 document: OWASP Machine Learning Security Top Ten 2023
 year: 2023
 order: 5
-title: ML05:2023 Model Stealing (モデル盗用)
+title: ML05:2023 Model Theft (モデル盗用)
 lang: ja
 tags:
   [
