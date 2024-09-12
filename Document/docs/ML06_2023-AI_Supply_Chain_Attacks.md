@@ -8,7 +8,7 @@ document: OWASP Machine Learning Security Top Ten 2023
 year: 2023
 order: 6
 title: ML06:2023 ML Supply Chain Attacks (ML サプライチェーン攻撃)
-lang: en
+lang: ja
 tags:
   [
     OWASP Machine Learning Security Top Ten 2023,
