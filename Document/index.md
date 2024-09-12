@@ -34,7 +34,7 @@ OWASP 機械学習セキュリティ Top 10 プロジェクトの主な目的は
 - [**ML03:2023 モデル反転攻撃 (Model Inversion Attack)**](docs/ML03_2023-Model_Inversion_Attack.md)
 - [**ML04:2023 メンバーシップ推論攻撃 (Membership Inference Attack)**](docs/ML04_2023-Membership_Inference_Attack.md)
 - [**ML05:2023 モデル盗用 (Model Theft)**](docs/ML05_2023-Model_Theft.md)
-- [**ML06:2023 AI サプライチェーン攻撃 (AI Supply Chain Attacks)**](docs/ML06_2023-AI_Supply_Chain_Attacks.md)
+- [**ML06:2023 ML サプライチェーン攻撃 (ML Supply Chain Attacks)**](docs/ML06_2023-AI_Supply_Chain_Attacks.md)
 - [**ML07:2023 転移学習攻撃 (Transfer Learning Attack)**](docs/ML07_2023-Transfer_Learning_Attack.md)
 - [**ML08:2023 モデル歪曲 (Model Skewing)**](docs/ML08_2023-Model_Skewing.md)
 - [**ML09:2023 出力完全性攻撃 (Output Integrity Attack)**](docs/ML09_2023-Output_Integrity_Attack.md)
