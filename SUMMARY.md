@@ -1,4 +1,4 @@
-# OWASP Top 10 機械学習セキュリティリスク
+# OWASP Machine Learning Security Top Ten ja
 
 - [OWASP Machine Learning Security Top Ten ja](README.md)
 
