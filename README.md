@@ -8,7 +8,7 @@ This is the unofficial Japanese translation of the [OWASP Machine Learning Secur
 - Project Repository - <https://github.com/OWASP/www-project-machine-learning-security-top-10>
 - Document Site - <https://mltop10.info/>
 
-# OWASP 機械学習セキュリティ Top 10 日本語版
+## OWASP 機械学習セキュリティ Top 10 日本語版
 
 * [OWASP 機械学習セキュリティ Top 10](Document/index.md)
 * [リーダー](Document/leaders.md)
